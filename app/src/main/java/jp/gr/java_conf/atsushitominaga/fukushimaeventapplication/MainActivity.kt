@@ -34,6 +34,11 @@ class MainActivity : AppCompatActivity() {
         layoutManager = LinearLayoutManager(this)
         newcontentRecyclerView.layoutManager = layoutManager
 
+        pager.adapter = PageAdapter(this)
+
+
+
+
         val query = firebaseReference!!.child("FOOD")
         val options = FirebaseRecyclerOptions.Builder<Model>().setQuery(query,Model::class.java).build()
 
