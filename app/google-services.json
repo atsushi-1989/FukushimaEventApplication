@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "20529280078",
+    "firebase_url": "https://qaapp-33414.firebaseio.com",
+    "project_id": "qaapp-33414",
+    "storage_bucket": "qaapp-33414.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:20529280078:android:9f9c7ecc38555a13d4ff1f",
+        "android_client_info": {
+          "package_name": "jp.gr.java_conf.atsushitominaga.fukushimaeventapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "20529280078-4lt02d14kdvu54sidilh8shkp021b1tc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB5DAPXHTOZw2047PVI2kOdPEo5qglZWso"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "20529280078-4lt02d14kdvu54sidilh8shkp021b1tc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

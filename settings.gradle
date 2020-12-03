@@ -1,0 +1,2 @@
+rootProject.name='FukushimaEventApplication'
+include ':app'
