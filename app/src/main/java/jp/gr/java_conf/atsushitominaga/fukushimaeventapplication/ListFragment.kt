@@ -107,7 +107,7 @@ class ListFragment : Fragment() {
                 }
 
                 holder.contentCard.setOnClickListener{
-                    mListener?.onListItemClicked(model.url)
+                    mListener?.onListItemClicked(model.url,model.detailId)
 
 
                 }
@@ -131,7 +131,7 @@ class ListFragment : Fragment() {
     }
 
     interface OnListFragmentInteractionListener{
-        fun onListItemClicked(url : String)
+        fun onListItemClicked(url : String,detailId: String)
     }
 
     companion object {

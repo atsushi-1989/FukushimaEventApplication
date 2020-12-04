@@ -21,20 +21,20 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:text="くるみの木"
+                android:text="TitleText"
                 android:textSize="24sp" />
 
             <ImageView
                 android:id="@+id/detailCoverImageView"
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
-                android:src="@drawable/content_image" />
+                 />
 
             <ImageView
                 android:id="@+id/detailContent1ImageView"
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
-                android:src="@drawable/content_image" />
+                android:layout_marginTop="16dp" />
 
             <TextView
                 android:id="@+id/detailContent1TextView"
@@ -42,14 +42,14 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
                 android:layout_weight="1"
-                android:text="600円"
+                android:text="TextView"
                 android:textSize="20sp" />
 
             <ImageView
                 android:id="@+id/detailContent2ImageView"
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
-                android:src="@drawable/content_image" />
+                 />
 
             <TextView
                 android:id="@+id/detailContent2TextView"
@@ -58,20 +58,20 @@
                 android:layout_margin="8dp"
                 android:layout_weight="1"
                 android:padding="8dp"
-                android:text="700円"
+                android:text="textView"
                 android:textSize="20sp" />
 
             <ImageView
                 android:id="@+id/subContent1ImageView"
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
-                android:src="@drawable/content_image" />
+                 />
 
             <ImageView
                 android:id="@+id/subContent2ImageView"
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
-                android:src="@drawable/content_image" />
+                android:layout_marginTop="16dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"

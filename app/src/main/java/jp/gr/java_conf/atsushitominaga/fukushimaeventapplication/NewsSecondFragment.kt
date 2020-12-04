@@ -21,6 +21,9 @@ class NewsSecondFragment : Fragment() {
 
     private var mListener : OnSecondNewsInteractionListener? = null
 
+    private var detailId : String = ""
+    private var url : String = ""
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -33,15 +36,17 @@ class NewsSecondFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
 
         val database = FirebaseDatabase.getInstance()
-        val ref = database.getReference().child("hoge")
+        val ref = database.getReference().child("TOP").child("image2")
 
         ref.addValueEventListener(object : ValueEventListener {
 
             override fun onDataChange(snapshot: DataSnapshot) {
 
+                url = snapshot.child("url").value.toString()
+                detailId = snapshot.child("detailId").value.toString()
 
-                val imageUrl = snapshot.child("url").value.toString()
 
+                val imageUrl = snapshot.child("imageUrl").value.toString()
                 val storageRef = FirebaseStorage.getInstance().getReferenceFromUrl(imageUrl)
                 storageRef.downloadUrl.addOnCompleteListener { task ->
                     val downloadUrl = task.result
@@ -56,12 +61,12 @@ class NewsSecondFragment : Fragment() {
         })
 
         newsSecondCard.setOnClickListener {
-            mListener?.onNewsClicked()
+            mListener?.onNewsClicked(url,detailId)
         }
     }
 
     interface OnSecondNewsInteractionListener{
-        fun onNewsClicked()
+        fun onNewsClicked(url: String, detailId: String)
     }
 
     override fun onAttach(context: Context) {

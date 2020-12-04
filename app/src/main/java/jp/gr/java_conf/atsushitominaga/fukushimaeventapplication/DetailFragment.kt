@@ -54,18 +54,66 @@ class DetailFragment : Fragment() {
 
             override fun onDataChange(snapshot: DataSnapshot) {
 
-                val text = snapshot.child("titleText").value.toString()
-                detailTitleTextView.text = text
+                val Title = snapshot.child("titleText").value.toString()
+                detailTitleTextView.text = Title
 
-
-                val imageUrl = snapshot.child("coverImage").value.toString()
-
-                val storageRef = FirebaseStorage.getInstance().getReferenceFromUrl(imageUrl)
-                storageRef.downloadUrl.addOnCompleteListener { task ->
+                val coverimage = snapshot.child("coverImage").value.toString()
+                val coverImageUrl= FirebaseStorage.getInstance().getReferenceFromUrl(coverimage)
+                coverImageUrl.downloadUrl.addOnCompleteListener { task ->
                     val downloadUrl = task.result
                     Glide.with(detailCoverImageView).load(downloadUrl)
                         .into(detailCoverImageView)
                 }
+
+                val content1image = snapshot.child("content1image").value.toString()
+                val content1imageUrl = FirebaseStorage.getInstance().getReferenceFromUrl(content1image)
+                content1imageUrl.downloadUrl.addOnCompleteListener { task ->
+                    val downloadUrl = task.result
+                    Glide.with(detailContent1ImageView).load(downloadUrl)
+                        .into(detailContent1ImageView)
+                }
+
+                val content1text = snapshot.child("content1text").value.toString()
+                detailContent1TextView.text = content1text
+
+                val content2image = snapshot.child("content2image").value.toString()
+                val content2imageUrl = FirebaseStorage.getInstance().getReferenceFromUrl(content2image)
+                content2imageUrl.downloadUrl.addOnCompleteListener { task ->
+                    val downloadUrl = task.result
+                    Glide.with(detailContent2ImageView).load(downloadUrl)
+                        .into(detailContent2ImageView)
+                }
+
+                val content2text = snapshot.child("content2text").value.toString()
+                detailContent2TextView.text = content2text
+
+                val subContent1image = snapshot.child("subcontent1image").value.toString()
+                val subContent1imageUrl = FirebaseStorage.getInstance().getReferenceFromUrl(subContent1image)
+                subContent1imageUrl.downloadUrl.addOnCompleteListener { task ->
+                    val downloadUrl = task.result
+                    Glide.with(subContent1ImageView).load(downloadUrl)
+                        .into(subContent1ImageView)
+                }
+
+                val subContent2image = snapshot.child("subcontent2image").value.toString()
+                val subContent2imageUrl = FirebaseStorage.getInstance().getReferenceFromUrl(subContent2image)
+                subContent2imageUrl.downloadUrl.addOnCompleteListener { task ->
+                    val downloadUrl = task.result
+                    Glide.with(subContent2ImageView).load(downloadUrl)
+                        .into(subContent2ImageView)
+                }
+
+                val addresText = snapshot.child("addresText").value.toString()
+                detailAddresTextView.text = addresText
+
+
+                val TelText = snapshot.child("TelText").value.toString()
+                detailTelTextView.text = TelText
+
+                val RegularHolidayText = snapshot.child("RegularHolidaytext").value.toString()
+                detailRegularHolidayTextView.text = RegularHolidayText
+
+
             }
 
             override fun onCancelled(error: DatabaseError) {

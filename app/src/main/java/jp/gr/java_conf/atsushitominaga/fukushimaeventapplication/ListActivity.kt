@@ -110,9 +110,10 @@ class ListActivity : AppCompatActivity(), ListFragment.OnListFragmentInteraction
 
     }
 
-    override fun onListItemClicked(url: String) {
+    override fun onListItemClicked(url: String, detailId:String) {
         val intent = Intent(this,DetailActivity::class.java)
         intent.putExtra("url", url)
+        intent.putExtra("detailId",detailId)
         startActivity(intent)
     }
 

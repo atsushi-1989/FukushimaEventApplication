@@ -120,8 +120,10 @@ class MainActivity : AppCompatActivity(),
         firebaseAdapter.stopListening()
     }
 
-    override fun onNewsClicked() {
+    override fun onNewsClicked(url: String, detailId : String) {
         val intent = Intent(this@MainActivity,DetailActivity::class.java)
+        intent.putExtra("url",url)
+        intent.putExtra("detailId",detailId)
         startActivity(intent)
     }
 
