@@ -17,7 +17,10 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(),
+    NewsFirstFragment.OnFirstNewsInteractionListener,
+    NewsSecondFragment.OnSecondNewsInteractionListener,
+    NewsTherdFragment.OnTherdNewsInteractionListener{
 
     var firebaseReference: DatabaseReference? = null
     var layoutManager: LinearLayoutManager? = null
@@ -74,6 +77,7 @@ class MainActivity : AppCompatActivity() {
                 holder.newContentCard.setOnClickListener {
                     val intent = Intent(applicationContext, DetailActivity::class.java)
                     intent.putExtra("url",model.url)
+                    intent.putExtra("detailId", model.detailId)
                     startActivity(intent)
                 }
             }
@@ -115,4 +119,13 @@ class MainActivity : AppCompatActivity() {
         super.onDestroy()
         firebaseAdapter.stopListening()
     }
+
+    override fun onNewsClicked() {
+        val intent = Intent(this@MainActivity,DetailActivity::class.java)
+        startActivity(intent)
+    }
+
+
+
+
 }

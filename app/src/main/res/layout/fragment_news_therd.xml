@@ -12,10 +12,9 @@
         android:layout_height="match_parent" >
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/newsTherdImageView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:src="@drawable/southkatudonjpg" />
+            android:layout_gravity="center" />
     </androidx.cardview.widget.CardView>
 </FrameLayout>

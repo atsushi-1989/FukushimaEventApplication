@@ -16,6 +16,7 @@ class DetailActivity : AppCompatActivity() {
 
         val bundle = intent.extras
         val url = bundle?.getString("url")
+        val detailId = bundle?.getString("detailId") as String
 
         if(url != ""){
             detailContener.visibility = View.GONE
@@ -42,7 +43,7 @@ class DetailActivity : AppCompatActivity() {
         detailContener.visibility = View.VISIBLE
         progressBar.visibility = View.GONE
 
-        supportFragmentManager.beginTransaction().add(R.id.detailContener,dtailFragment()).commit()
+        supportFragmentManager.beginTransaction().add(R.id.detailContener,DetailFragment.newInstance(detailId,"1")).commit()
 
 
 
